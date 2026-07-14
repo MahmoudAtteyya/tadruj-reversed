@@ -1,0 +1,5 @@
+# Extraction date: 2026-07-14
+# Target: https://tadruj.vercel.app/
+# Method: Public web access
+
+source/bundle.min.js filter=lfs diff=lfs merge=lfs -text

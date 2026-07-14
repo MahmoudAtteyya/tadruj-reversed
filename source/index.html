@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تدرُّج - رحلة العلم والعمل</title>
+    <link rel="icon" type="image/png" href="/favicon1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-primary: #10b981;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #87CEEB; /* Sky Blue Base */
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .font-quran { font-family: 'Noto Naskh Arabic', serif; }
+        .font-heritage { font-family: 'Amiri', serif; }
+        
+        /* Cloud Floating Animation */
+        @keyframes floatCloud {
+            from { transform: translateX(110vw); }
+            to { transform: translateX(-20vw); }
+        }
+
+        /* Leaf Falling and Swaying Animation */
+        .leaf {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+            animation: fall linear infinite, sway ease-in-out infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes sway {
+            0%, 100% { margin-left: 0px; }
+            50% { margin-left: 50px; }
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 10px;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Sky Gradient Background for Light Mode */
+        .sky-bg {
+            background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 40%, #F0F8FF 100%);
+            background-attachment: fixed;
+        }
+
+        /* Global Dynamic Color Overrides for specific UI elements */
+        .accent-border { border-color: var(--accent-primary); }
+        .accent-text { color: var(--accent-primary); }
+        .accent-bg { background-color: var(--accent-primary); }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-Blq6ZVhn.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
