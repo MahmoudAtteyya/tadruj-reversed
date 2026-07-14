@@ -1,0 +1,33 @@
+{
+  "name": "eN",
+  "type": "Dynamic Quiz Generator",
+  "code": "e=>[{question:`ما هو الهدف الرئيسي من دراسة ${e}؟`,options:[\"طلب العلم النافع\",\"التسلية\",\"مضيعة الوقت\",\"الشهرة\"],correctIndex:0,explanation:\"طلب العلم الشرعي هو عبادة يتقرب بها العبد إلى الله.\"},{question:\"هل يعتبر الإخلاص شرطاً في قبول العمل؟\",options:[\"نعم\",\"لا\",\"أحياناً\",\"لا علاقة له\"],correctIndex:0,explanation:\"العمل لا يقبل إلا بالإخلاص لله والمتابعة للنبي صلى الله عليه وسلم.\"}]",
+  "description": "Generates quiz questions dynamically based on book name",
+  "questions_per_book": 2,
+  "questions": [
+    {
+      "id": 1,
+      "question_template": "ما هو الهدف الرئيسي من دراسة ${book_name}؟",
+      "options": [
+        "طلب العلم النافع",
+        "التسلية",
+        "مضيعة الوقت",
+        "الشهرة"
+      ],
+      "correctIndex": 0,
+      "explanation": "طلب العلم الشرعي هو عبادة يتقرب بها العبد إلى الله."
+    },
+    {
+      "id": 2,
+      "question": "هل يعتبر الإخلاص شرطاً في قبول العمل؟",
+      "options": [
+        "نعم",
+        "لا",
+        "أحياناً",
+        "لا علاقة له"
+      ],
+      "correctIndex": 0,
+      "explanation": "العمل لا يقبل إلا بالإخلاص لله والمتابعة للنبي صلى الله عليه وسلم."
+    }
+  ]
+}

